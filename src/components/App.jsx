@@ -6,7 +6,7 @@ import { Layout } from './Layout';
 
 const { useState, useEffect } = require('react');
 
-const getInitialFilters = () => {
+const getInitialContacts = () => {
   const savedContacts = localStorage.getItem('contacts');
   if (savedContacts !== null) {
     return JSON.parse(savedContacts);
@@ -15,7 +15,7 @@ const getInitialFilters = () => {
 };
 
 export const App = () => {
-  const [contacts, setContacts] = useState(getInitialFilters);
+  const [contacts, setContacts] = useState(getInitialContacts);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
